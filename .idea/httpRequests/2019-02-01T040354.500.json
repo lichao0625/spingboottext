@@ -1,0 +1,7 @@
+{
+  "timestamp": "2019-02-01T08:03:54.187+0000",
+  "status": 500,
+  "error": "Internal Server Error",
+  "message": "java.util.LinkedHashMap cannot be cast to com.example.spingboottext.model.User",
+  "path": "/user/add"
+}

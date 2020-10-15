@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function getPage(){
+            return 11;
+        }
+        $("document").ready(function () {
+            isIndex=true;
+            $.get(url+"talk/getUserTalks?userId="+userId,function (data,status) {
+                if(data.msg=="成功"){
+                    var json=data.data.list;
+                    var allpanel="";
+                    for(var i=0;i<json.length;i++){
+                        var panel="<div style='margin-left: 50pt;margin-right: 50pt ;margin-bottom: 10pt;margin-top: 10pt'>\n" +
+                            " <a href='stroy.html?data="+json[i].storyID+"' class='panel-title'>"+json[i].text+"</a> "+
+                            "    </div>\n";
+                        allpanel+=panel;
+                    }
+                    $("#list").html(allpanel);
+                    if(json.length==0)
+                        $("#note").html("没有评论");
+                }else{
+                    $("#note").html("没有评论");
+                }
+                $("[data-toggle='popover']").popover();
+            });
+
+        });
+    </script>
+</head>
+<body>
+<div id="box">
+    <div  id="list" ></div>
+    <p id="note" style="color: #9d9d9d"></p>
+</div>
+</body>
+</html>

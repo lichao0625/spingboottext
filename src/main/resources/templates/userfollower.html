@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .list-group-horizontal .list-group-item {
+            display: inline-block;
+        }
+        .list-group-horizontal .list-group-item {
+            margin:5px;
+        }
+        .list-group-horizontal .list-group-item:first-child {
+            border-top-right-radius:0;
+            border-bottom-left-radius:4px;
+        }
+        .list-group-horizontal .list-group-item:last-child {
+            border-top-right-radius:4px;
+            border-bottom-left-radius:0;
+        }
+    </style>
+    <script type="text/javascript">
+        $("document").ready(function () {
+            $.get(url+"userFollower/getFollower?userId="+userId,function (data,status) {
+                if(data.msg=="成功") {
+                    var follows=data.data.list;
+                    var text="";
+
+                    for(var i=0;i<follows.length;i++){
+                        var userPortrait=follows[i].followerPortrait;
+                        if(userPortrait==null)
+                            userPortrait="/spingboottext/templates/timg.jpg";
+                        else
+                            userPortrait="/spingboottext/templates"+userPortrait;
+                        text+="   <div  class=\"col-sm-6 col-md-3\" ><div class=\"thumbnail\" style=\"text-align:center\"><img src=\""+userPortrait+"\" class=\"img-responsive\" >\n" +
+                            " <a href=\"user.html?data="+follows[i].followerId+"\" >"+follows[i].followerName+"</a></div></div>";
+                    }
+                    $("#list").html(text);
+                }  else{
+                    $("#list").html("无数据");
+
+                }
+            })
+        })
+
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="row" style="padding-top:50px">
+
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="row" id="list">
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

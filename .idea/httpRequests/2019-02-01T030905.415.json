@@ -1,0 +1,7 @@
+{
+  "timestamp": "2019-02-01T07:09:05.058+0000",
+  "status": 415,
+  "error": "Unsupported Media Type",
+  "message": "Content type '*/*;charset=UTF-8' not supported",
+  "path": "/user/add"
+}

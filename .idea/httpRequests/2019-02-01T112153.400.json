@@ -1,0 +1,7 @@
+{
+  "timestamp": "2019-02-01T03:21:53.400+0000",
+  "status": 400,
+  "error": "Bad Request",
+  "message": "Required request body is missing: public com.example.spingboottext.model.User com.example.spingboottext.controller.UserController.addUser(java.lang.String,java.lang.String)",
+  "path": "/user/add"
+}

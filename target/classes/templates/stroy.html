@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>故事</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.cookie.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="static/js/head.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="static/css/jquery.notebook.css">
+    <script type="text/javascript" src="src/js/libs/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.notebook.js"></script>
+    <script type="text/javascript" src="static/js/story.js"></script>
+    <script type="text/javascript" src="static/js/pwt.js"></script>
+    <link rel="stylesheet" type="text/css" href="/spingboottext/templates/static/css/myIcon.css">
+</head>
+<body>
+<div style="margin-left: 50pt;margin-right: 50pt ;margin-bottom: 10pt;margin-top: 20pt">
+    <ul class="nav nav-tabs" role="tablist" id="user"></ul>
+
+    <div  id="list"  >
+
+    </div>
+    <div id="branchBox" style=" margin-top: 10pt"></div>
+    <p id="note" style="color: #9d9d9d"></p>
+
+</div>
+
+<div style="margin-left: 50pt;margin-right: 50pt ;margin-top: 10pt">
+    <button type="button" id="branchEdit"  class="btn btn-success">修改</button>
+    <button type="button" id="branchCreate" class="btn btn-success">创建分支</button>
+    <button type="button" id="deleteStory" class="btn btn-success"
+            data-toggle="modal" data-target="#deleteModal">删除</button>
+</div>
+<div style="margin-left: 50pt;margin-right: 50pt ;margin-top: 10pt" id="userTalkList">
+
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="addTalk" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <form class="form-horizontal" role="form" style="margin-top: 10pt;margin-right: 10pt">
+
+                <div class="form-group">
+                    <label for="tack" class="col-sm-2 control-label">评论</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="tack" placeholder="请添加评论">
+                    </div>
+                </div>
+
+            </form>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+                <button type="button" class="btn btn-primary" id="submit" onclick="submitClick()">
+                    提交
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<!--模态框组件-->
+<div class="modal fade" id="deleteModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>警告</h3>
+            </div>
+            <div class="modal-body">
+                <p>确定要删除这段故事吗？</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="deleteSubmit">确定</button>
+                <button class="btn btn-info" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

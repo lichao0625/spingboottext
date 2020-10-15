@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.spingboottext.dao.UserFollowerDao" >
+    <sql id="BASE_TABLE">
+        userFollower
+    </sql>
+
+    <sql id="BASE_COLUMN">
+        id,userId,followerId,followName,followerName,followPortrait,followerPortrait
+    </sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.example.spingboottext.model.UserFollower">
+        INSERT INTO <include refid="BASE_TABLE"/> (userId,followerId,followName,followerName,followPortrait,followerPortrait)
+        VALUES (#{userId},#{followerId},#{followName},#{followerName},#{followPortrait},#{followerPortrait})
+    </insert>
+
+    <select id="byIdGetFollowers" resultType="com.example.spingboottext.model.UserFollower">
+        SELECT * FROM  <include refid="BASE_TABLE"/> WHERE userId = #{userId}
+    </select>
+
+    <select id="byIdGetUsers" resultType="com.example.spingboottext.model.UserFollower">
+    SELECT * FROM  <include refid="BASE_TABLE"/> WHERE followerId = #{followerId}
+</select>
+    <select id="getUserFollower" resultType="com.example.spingboottext.model.UserFollower">
+        SELECT * FROM  <include refid="BASE_TABLE"/> WHERE followerId = #{followerId} and userId = #{userId}
+    </select>
+
+    <select id="byIdGetUserNum" resultType="Integer">
+        SELECT COUNT(*) AS NumberOfOrders FROM  <include refid="BASE_TABLE"/> WHERE followerId = #{followerId}
+    </select>
+    <select id="byIdGetFollowerNum" resultType="Integer">
+        SELECT COUNT(*) AS NumberOfOrders FROM  <include refid="BASE_TABLE"/> WHERE userId = #{userId}
+    </select>
+    <select id="deleteUser" resultType="Integer">
+        DELETE FROM <include refid="BASE_TABLE"/> WHERE id = #{id}
+    </select>
+</mapper>

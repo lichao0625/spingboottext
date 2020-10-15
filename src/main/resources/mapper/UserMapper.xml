@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.spingboottext.dao.UserDao" >
+    <sql id="BASE_TABLE">
+        user
+    </sql>
+
+    <sql id="BASE_COLUMN">
+        id,name,pwd,portrait,nikeName,email,phone,signature
+    </sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.example.spingboottext.model.User">
+        INSERT INTO user (name,pwd) VALUES (#{name},#{pwd})
+    </insert>
+
+    <select id="selectUsers" resultType="com.example.spingboottext.model.User">
+        SELECT * FROM <include refid="BASE_TABLE"/>
+    </select>
+
+    <select id="login" resultType="com.example.spingboottext.model.User">
+        SELECT * FROM user WHERE name = #{name} AND pwd = #{pwd}
+    </select>
+    <select id="byIdGetUser" resultType="com.example.spingboottext.model.User">
+        SELECT * FROM user WHERE id = #{id}
+    </select>
+    <select id="byNameGetUser" resultType="com.example.spingboottext.model.User">
+        SELECT * FROM user WHERE name = #{name}
+    </select>
+    <select id="updateUserInfo" resultType="com.example.spingboottext.model.User">
+        UPDATE user SET nikeName = #{nikeName} , signature = #{signature} , email = #{email} , phone = #{phone}  WHERE id = #{id}
+    </select>
+    <select id="updatePortrait" resultType="com.example.spingboottext.model.User">
+        UPDATE user SET portrait = #{portrait} WHERE id = #{id}
+    </select>
+    <select id="updatePwd" resultType="com.example.spingboottext.model.User">
+        UPDATE user SET pwd = #{pwd} WHERE id = #{id}
+    </select>
+</mapper>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <script type="text/javascript">
+        var a1='#';
+        var a2="#";
+        var a3="#";
+        var a4="#";
+        var url="http://localhost:8080/"
+        function setAction(page1,page2,page3,page4){
+            a1=page1;
+            a2=page2;
+            a3=page3;
+            a4=page4;
+        }
+        $("document").ready(function () {
+                var cookies=$.cookie("stroybook");
+            var page=window.parent.getPage();
+            switch (page) {
+                case 1:
+                    setAction("active","normal","normal","normal");
+                    break;
+                case 2:
+                    setAction("normal","active","normal","normal");
+                    break;
+                case 3:
+                    setAction("normal","normal","active","normal");
+                    break;
+                case 4:
+                    setAction("normal","normal","normal","active");
+                    break;
+            }
+            if(cookies!=null&&cookies!=""){
+                    var datas=unescape(cookies);
+                    datas=datas.split(';');
+                    //document.getElementById("username").innerHtml=datas[0];
+
+                    $("#rightbutton").html(    "<li class="+a3+">\n" +
+                "                    <a id='self' href=\"#\">我的</a>\</li>n" +
+                "                <li class="+a4+" ><a id='logout' href=\"#\" >注销</a></li>");
+
+                }else{
+                    var litext="<li class="+a1+" >\n" +
+                        "                    <a id='index' href=\"#\">故事</a>\n" +
+                        "                </li>\n" +
+                        "                <li class="+a2+" >\n" +
+                        "                    <a id='create' href=\"#\">创建故事</a>      </li>"+
+                        "<li  class="+a3+"><a id='login' href=\"#\" >登录</a></li>"+
+                        "<li  class="+a4+"><a id='reg' href=\"#\" >注册</a></li>";
+                    $("#user").html(litext);
+                }
+
+            $("#index").click(function () {
+                window.parent.location.href="index.html";}
+            );
+            $("#create").click(function () {
+                window.parent.location.href="create.html";}
+            );
+            $("#self").click(function () {
+                window.parent.location.href="self.html";
+            });
+            $("#login").click(function () {
+                window.parent.location.href="login.html";
+            });
+            $("#reg").click(function () {
+                window.parent.location.href="reg.html";
+            });
+            $("#logout").click(function () {
+                window.parent.location.href="index.html";
+            });
+        });
+    </script>
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <ul class="nav nav-tabs" role="tablist" id="user">
+                <li class="+a1+" > <a id='index' href=\"#\">故事</a></li>
+                <li class="+a2+" ><a id='create' href=\"#\">创建故事</a></li>
+            </ul>
+        </div>
+
+
+        <ul class="nav navbar-nav navbar-right" id="rightbutton">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+        </ul>
+    </div>
+</nav>
+</body>
+</html>

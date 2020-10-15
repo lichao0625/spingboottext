@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.spingboottext.dao.UserTalkDao" >
+    <sql id="BASE_TABLE">
+        usertalk
+    </sql>
+
+    <sql id="BASE_COLUMN">
+        id,talkID,userID,username,userPortrait,text,createTime,tUserID,storyID,storyName
+    </sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.example.spingboottext.model.UserTalk">
+        INSERT INTO <include refid="BASE_TABLE"/> (talkID,userID,username,userPortrait,text,createTime,tUserID,storyID,storyName) VALUES (#{talkID},#{userID},#{username},#{userPortrait},#{text},#{createTime},#{tUserID},#{storyID},#{storyName})
+    </insert>
+
+    <select id="getTalkTalks" resultType="com.example.spingboottext.model.UserTalk">
+        SELECT
+        <include refid="BASE_COLUMN"/>
+        FROM
+        <include refid="BASE_TABLE"/> WHERE talkID = #{talkID} order by id desc
+    </select>
+    <select id="getToSlefTalks" resultType="com.example.spingboottext.model.Talk">
+        SELECT
+        <include refid="BASE_COLUMN"/>
+        FROM
+        <include refid="BASE_TABLE"/> WHERE tUserID = #{tUserID} order by id desc
+    </select>
+    <select id="hasUser" resultType="com.example.spingboottext.model.UserTalk">
+        SELECT * FROM  <include refid="BASE_TABLE"/> WHERE userID = #{userID} and talkID = #{talkID}
+    </select>
+
+    <select id="getSize" resultType="Integer">
+        SELECT COUNT(*) AS NumberOfOrders FROM  <include refid="BASE_TABLE"/> WHERE talkID = #{talkID}
+    </select>
+    <select id="getSizeByStory" resultType="Integer">
+        SELECT COUNT(*) AS NumberOfOrders FROM  <include refid="BASE_TABLE"/> WHERE storyID = #{storyID}
+    </select>
+    <select id="delete" resultType="Integer">
+        DELETE FROM <include refid="BASE_TABLE"/> WHERE id = #{id}
+    </select>
+    <select id="deleteByTalk" resultType="Integer">
+        DELETE FROM <include refid="BASE_TABLE"/> WHERE talkID = #{talkID}
+    </select>
+
+</mapper>

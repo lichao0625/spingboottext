@@ -1,0 +1,488 @@
+GET http://localhost:8080/user/login?name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456
+Accept: application/json
+Cache-Control: no-cache
+
+{"name":"xbxb","id":0,"pwd":"123456"}
+
+###
+
+GET http://localhost:8080/user/login?name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456
+Accept: application/json
+Cache-Control: no-cache
+
+{"name":"xbxb","id":0,"pwd":"123456"}
+
+###
+
+GET http://localhost:8080/user/login?name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456
+Accept: application/json
+Cache-Control: no-cache
+
+{"name":"xbxb","id":0,"pwd":"123456"}
+
+###
+
+GET http://localhost:8080/user/login?name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456
+Accept: application/json
+Cache-Control: no-cache
+
+{"name":"xbxb","id":0,"pwd":"123456"}
+
+###
+
+GET http://localhost:8080/user/all?name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456
+Accept: application/json
+Cache-Control: no-cache
+
+{"name":"xbxb","id":0,"pwd":"123456"}
+
+<> 2019-02-15T040503.200.json
+
+###
+
+GET http://localhost:8080/user/login?name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456
+Accept: application/json
+Cache-Control: no-cache
+
+{"name":"xbxb","id":0,"pwd":"123456"}
+
+<> 2019-02-15T040440.404.json
+
+###
+
+GET http://localhost:8080/login?name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456
+Accept: application/json
+Cache-Control: no-cache
+
+{"name":"xbxb","id":0,"pwd":"123456"}
+
+<> 2019-02-15T040311.404.json
+
+###
+
+GET http://localhost:8080/login?name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456
+Accept: application/json
+Cache-Control: no-cache
+
+{"name":"xbxb","id":0,"pwd":"123456"}
+
+<> 2019-02-15T040052.404.json
+
+###
+
+GET http://localhost:8080/login?name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456
+Accept: application/json
+Cache-Control: no-cache
+
+{"name":"xbxb","id":0,"pwd":"123456"}
+
+<> 2019-02-15T035857.404.json
+
+###
+
+GET http://localhost:8080/login?name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456
+Accept: application/json
+Cache-Control: no-cache
+
+{"name":"xbxb","id":0,"pwd":"123456"}
+
+<> 2019-02-15T035830.404.json
+
+###
+
+GET http://localhost:8080/user/login?name=xbxb&pwd=123456&name=xbxb&pwd=123456&name=xbxb&pwd=123456
+Accept: application/json
+Cache-Control: no-cache
+
+{"name":"xbxb","id":0,"pwd":"123456"}
+
+<> 2019-02-15T035808.404.json
+
+###
+
+GET http://localhost:8080/user/login?name=xbxb&pwd=123456&name=xbxb&pwd=123456
+Accept: application/json
+Cache-Control: no-cache
+
+{"name":"xbxb","id":0,"pwd":"123456"}
+
+<> 2019-02-15T035723.404.json
+
+###
+
+GET http://localhost:8080/user/login?name=xbxb&pwd=123456
+Accept: application/json
+Cache-Control: no-cache
+
+{"name":"xbxb","id":0,"pwd":"123456"}
+
+<> 2019-02-15T035700.404.json
+
+###
+
+GET http://localhost:8080/user/login?name=xbxb&pwd=123456
+Accept: application/json
+Cache-Control: no-cache
+
+{"name":"xbxb","id":0,"pwd":"123456"}
+
+<> 2019-02-15T035533.500.json
+
+###
+
+GET http://localhost:8080/user/login?name=xbxb&pwd=123456
+Accept: application/json
+Cache-Control: no-cache
+
+{"name":"xbxb","id":0,"pwd":"123456"}
+
+<> 2019-02-15T035457.404.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{"name":"xbxb","id":0,"pwd":"123456"}
+
+<> 2019-02-15T032057.200.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{"name":"xbxb","id":0,"pwd":"123456"}
+
+<> 2019-02-15T031439.200.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{"name":"xbxb","id":0,"pwd":"123456"}
+
+<> 2019-02-15T031303.500.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{"name":"xbxb","id":0}
+
+<> 2019-02-01T041858.200.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{"user":{"name":"xbxb","id":0}}
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{"user":{"name":"xbxb","id":0}}
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{"user":{"name":"xbxb","id":0}}
+
+<> 2019-02-01T040354.500.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{“user”:{"name":"xbxb","id":0}}
+
+<> 2019-02-01T040238.500.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{“user”:“{"name":"xbxb","id":0}”}
+
+<> 2019-02-01T040218.500.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{“user”:“{"name":"xbxb","id":0}”}
+
+<> 2019-02-01T035349.415.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{“user”:“{"name":"xbxb","id":0}”}
+
+<> 2019-02-01T035318.415.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{“user”:“{"name":"xbxb","id":0}”}
+
+<> 2019-02-01T035310.415.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{“user”:“{"name":"xbxb","id":0}”}
+
+<> 2019-02-01T035255.415.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+“{"name":"xbxb","id":0}”
+
+<> 2019-02-01T032642.415.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{"name":"xbxb","id":0}
+
+<> 2019-02-01T032252.415.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{"name":"xbxb","id":0}
+
+<> 2019-02-01T032220.415.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{"name":"xbxb","id":0}
+
+<> 2019-02-01T031531.415.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{"name":"xbxb","id":0}
+
+<> 2019-02-01T031529.415.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: */*
+Cache-Control: no-cache
+
+{"name":"xbxb","id":0}
+
+<> 2019-02-01T031048.415.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: */*
+Cache-Control: no-cache
+
+{"name":"xbxb","id":0}
+
+<> 2019-02-01T030905.415.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{"name":"xbxb","id":0}
+
+<> 2019-02-01T030852.415.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{"name":"xbxb","id":0}
+
+<> 2019-02-01T030530.415.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{"name":"xbxb","id":0}
+
+<> 2019-02-01T030456.200.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+"xbxb"
+
+<> 2019-02-01T021618.200.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+"userName":"xbxb"
+
+<> 2019-02-01T021606.200.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{"userName":"xbxb"}
+
+<> 2019-02-01T014938.200.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{"userName":"xbxb","pwd":"admin123"}
+
+<> 2019-02-01T113048.400.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{"userName":"xbxb","pwd","admin123"}
+
+<> 2019-02-01T112737.400.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{"userName":"xbxb","pwd","admin123"}
+
+<> 2019-02-01T112736-1.400.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{"userName":"xbxb","pwd","admin123"}
+
+<> 2019-02-01T112736.400.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{"userName":"xbxb","pwd","admin123"}
+
+<> 2019-02-01T112735.400.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{"userName":"xbxb","pwd":"admin123"}
+
+<> 2019-02-01T112339.400.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{"userName":"xbxb","pwd":"admin123"}
+
+<> 2019-02-01T112250.400.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{"userName":"xbxb","pwd":"admin123"}
+
+<> 2019-02-01T112153.400.json
+
+###
+
+POST http://localhost:8080/user/add
+Accept: application/json
+Cache-Control: no-cache
+
+{"userName":"xbxb"}
+
+<> 2019-02-01T111940.200.json
+
+###
+

@@ -1,0 +1,7 @@
+{
+  "timestamp": "2019-02-15T07:55:33.434+0000",
+  "status": 500,
+  "error": "Internal Server Error",
+  "message": "nested exception is org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or null) to be returned by selectOne(), but found: 2",
+  "path": "/user/login"
+}

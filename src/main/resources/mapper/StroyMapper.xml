@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.spingboottext.dao.StroyDao" >
+    <sql id="BASE_TABLE">
+        stroy
+    </sql>
+
+    <sql id="BASE_COLUMN">
+        id,title,tag,stroys,point,watch,showType,type,createBy,createTime,updateTime,followId,isBranch,isEnd,editType
+    </sql>
+
+    <insert id="addStroy" useGeneratedKeys="true" keyProperty="id" parameterType="com.example.spingboottext.model.Stroy">
+        INSERT INTO stroy (stroys,title,tag,type,createBy,createTime,updateTime,showType,followId,isBranch,isEnd,editType) VALUES (#{stroys},#{title},#{tag},#{type},#{createBy},#{createTime},#{updateTime},#{showType},#{followId},#{isBranch},#{isEnd},#{editType})
+    </insert>
+
+    <select id="get" resultType="com.example.spingboottext.model.Stroy">
+        SELECT
+        s.id,s.title,s.tag,s.stroys,s.point,s.watch,s.showType,s.type,s.createBy,s.createTime,s.updateTime,s.followId,s.isBranch,s.isEnd,s.editType,
+        u.nikeName,u.portrait
+        FROM
+        stroy s LEFT JOIN  user u
+        on s.createBy = u.id
+        where showType = 0  order  by id desc
+    </select>
+    <select id="getStroyById" resultType="com.example.spingboottext.model.Stroy">
+        SELECT * FROM stroy WHERE id = #{id}
+    </select>
+    <select id="getByType" resultType="com.example.spingboottext.model.Stroy">
+          SELECT
+        s.*,
+        u.nikeName,u.portrait
+        FROM
+        stroy s LEFT JOIN  user u
+        on s.createBy = u.id
+        WHERE s.type = #{type} AND s.showType = 0 and s.isBranch=false order  by id desc
+    </select>
+    <select id="getByCreateId" resultType="com.example.spingboottext.model.Stroy">
+    SELECT * FROM stroy WHERE createBy = #{createBy} and isBranch=false order  by id desc
+</select>
+    <select id="getFollowByCreateId" resultType="com.example.spingboottext.model.Stroy">
+        SELECT * FROM stroy WHERE createBy = #{createBy} and isBranch=true order  by id desc
+    </select>
+    <select id="getBrachByFollowId" resultType="com.example.spingboottext.model.Stroy">
+        SELECT * FROM stroy WHERE followId = #{followId}
+    </select>
+    <select id="getByPoint" resultType="com.example.spingboottext.model.Stroy">
+        SELECT * FROM stroy WHERE type = #{type} AND showType = 0 and isBranch=false order  by point desc
+    </select>
+    <select id="delete" resultType="Integer">
+        DELETE * FROM stroy WHERE id = #{id} and userId = #{userId}
+    </select>
+    <select id="updateStroy" resultType="com.example.spingboottext.model.Stroy">
+        UPDATE stroy SET stroys = #{stroys} , updateTime = #{updateTime} , title = #{title}  WHERE id = #{id}
+    </select>
+    <select id="resetShowType" resultType="com.example.spingboottext.model.Stroy">
+        UPDATE stroy SET showType = #{showType} WHERE id = #{id}
+    </select>
+    <select id="resetIsEnd" resultType="com.example.spingboottext.model.Stroy">
+        UPDATE stroy SET isEnd = #{isEnd} WHERE id = #{id}
+    </select>
+    <select id="getStroyByName" resultType="com.example.spingboottext.model.Stroy">
+        SELECT * FROM stroy WHERE title = #{title}
+    </select>
+
+
+</mapper>

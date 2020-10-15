@@ -1,0 +1,18 @@
+#rich-editor{
+    border: 1px;
+    padding:10px;
+    height: 350pt;
+    bordercolor:#ccc;
+    border-style:solid;
+    border-radius:0 0 10px 10px;
+    overflow-y: auto
+}
+#rich-title{
+    border: 1px ;
+    padding:10px;
+    height: 25pt;
+    background-color: #b2dba1;
+    bordercolor:#ccc;
+    border-style:solid;
+    border-radius:10px 10px 0 0;
+}

@@ -1,0 +1,7 @@
+{
+  "timestamp": "2019-02-01T08:02:38.633+0000",
+  "status": 500,
+  "error": "Internal Server Error",
+  "message": "Lexical error at line 1, column 2.  Encountered: \"\“\" (8220), after : \"\"",
+  "path": "/user/add"
+}

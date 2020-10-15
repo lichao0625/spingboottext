@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.spingboottext.dao.TagDao" >
+    <sql id="BASE_TABLE">
+        tag
+    </sql>
+
+    <sql id="BASE_COLUMN">
+        id,tag,number
+    </sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.example.spingboottext.model.Tag">
+        INSERT INTO <include refid="BASE_TABLE"/> (tag) VALUES (#{tag})
+    </insert>
+
+    <select id="selectTag" resultType="com.example.spingboottext.model.Tag">
+        SELECT
+        <include refid="BASE_COLUMN"/>
+        FROM
+        <include refid="BASE_TABLE"/>
+    </select>
+
+    <select id="byIdGetTag" resultType="com.example.spingboottext.model.Tag">
+    SELECT * FROM  <include refid="BASE_TABLE"/> WHERE id = #{id}
+</select>
+    <select id="byTagGetTag" resultType="com.example.spingboottext.model.Tag">
+        SELECT * FROM  <include refid="BASE_TABLE"/> WHERE tag = #{tag}
+    </select>
+    <select id="updateNumber" resultType="com.example.spingboottext.model.Tag">
+             UPDATE tag SET number = #{number} WHERE tag = #{tag}
+    </select>
+</mapper>

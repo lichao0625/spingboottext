@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.spingboottext.dao.TalkDao" >
+    <sql id="BASE_TABLE">
+        talk
+    </sql>
+
+    <sql id="BASE_COLUMN">
+        id,storyID,userID,username,userPortrait,text,createTime
+    </sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.example.spingboottext.model.Talk">
+        INSERT INTO <include refid="BASE_TABLE"/> (storyID,userID,username,userPortrait,text,createTime) VALUES (#{storyID},#{userID},#{username},#{userPortrait},#{text},#{createTime})
+    </insert>
+
+    <select id="getStoryTalks" resultType="com.example.spingboottext.model.Talk">
+        SELECT
+        <include refid="BASE_COLUMN"/>
+        FROM
+        <include refid="BASE_TABLE"/> WHERE storyID = #{storyID} order by id desc
+    </select>
+    <select id="getSlefTalks" resultType="com.example.spingboottext.model.Talk">
+        SELECT
+        <include refid="BASE_COLUMN"/>
+        FROM
+        <include refid="BASE_TABLE"/> WHERE userID = #{userID} order by id desc
+    </select>
+
+    <select id="hasUser" resultType="com.example.spingboottext.model.Talk">
+        SELECT * FROM  <include refid="BASE_TABLE"/> WHERE userID = #{userID} and storyID = #{storyID}
+    </select>
+
+    <select id="getSize" resultType="Integer">
+        SELECT COUNT(*) AS NumberOfOrders FROM  <include refid="BASE_TABLE"/> WHERE storyID = #{storyID}
+    </select>
+
+    <select id="delete" resultType="com.example.spingboottext.model.Talk">
+        DELETE FROM <include refid="BASE_TABLE"/> WHERE id = #{id}
+    </select>
+</mapper>

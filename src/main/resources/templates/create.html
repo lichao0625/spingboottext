@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.cookie.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="static/js/head.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="static/css/jquery.notebook.css">
+    <script type="text/javascript" src="static/js/jquery.notebook.js"></script>
+    <script type="text/javascript">
+
+        function getPage(){
+            return 2;
+        }
+        $("domument").ready(function () {
+            $('.my-editor').notebook($.fn.notebook.defaults = {
+                placeholder: '输入故事内容',
+            });
+            $('.title-editor').notebook($.fn.notebook.defaults = {
+                placeholder: '编辑标题',
+            });
+            $("#saveText").click(function () {
+                var note=$('.my-editor').html();
+                var title=$('.title-editor').html();
+                var cookies=$.cookie("stroy");
+                var userId=0;
+                if(cookies!=null&&cookies.length>0){
+                    var user=JSON.parse(cookies);
+                    userId=user.id;
+                }
+                var stroyType = $('input[name=stroyType][checked]').val();
+                var showType=$('input[name=showType][checked]').val();
+                var addAble=$('input[name=showType][checked]').val();
+                var json={"title":title,"stroys":note,"tag":"","userId":user.id,"type":stroyType,"showType":showType+addAble,"createBy":userId,"isBranch":false};
+                $.post(url+"stroy/add",json,function (data,status) {
+                    if(data.msg=="成功"){
+                        alert("创建成功");
+                    }else{
+                        alert("创建失败:"+data.msg);
+                    }
+                });
+            })
+        })
+    </script>
+</head>
+<body>
+<div >
+    <ul class="nav nav-tabs" role="tablist" id="user"></ul>
+    <div class="panel  panel-success" style="margin-left: 50pt;margin-right: 50pt ;margin-bottom: 10pt;margin-top: 20pt">
+    <div class="panel-heading">
+        <div class="title-editor panel-title" style="height: 24pt"></div>
+    </div>
+    <div class="my-editor panel-body" style="height: 350pt"></div>
+</div>
+    <div style="margin-left: 50pt;margin-right: 50pt ;margin-bottom: 10pt">
+        <div >
+              <span >  故事类型 </span>
+            <label class="radio-inline">
+                <input type="radio" name="stroyType" id="optionsRadios1" value="1" checked> 玄幻
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="stroyType" id="optionsRadios2" value="2" > 奇幻
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="ostroyType" id="optionsRadios3"  value="3"> 都市
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="stroyType" id="optionsRadios4" value="4" > 校园
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="stroyTypee" id="optionsRadios5"  value="5"> 家庭
+            </label>
+            <label class="radio-inline">
+            <input type="radio" name="stroyType" id="optionsRadios6"  value="6"> 穿越
+        </label>
+            <label class="radio-inline">
+                <input type="radio" name="stroyType" id="optionsRadios7"  value="7"> 爱情
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="stroyType" id="optionsRadios8"  value="8"> 恐怖
+            </label>
+        </div>
+
+        <div >
+        <span >  查看类型 </span>
+        <label class="radio-inline">
+            <input type="radio" name="showType" id="optionsRadios9" value="1" checked> 所有人可见
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="showType" id="optionsRadios10" value="2" > 好友可见
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="showType" id="optionsRadios11"  value="3"> 仅自己可见
+        </label>
+    </div>
+        <div >
+            <span >  添加分支设置 </span>
+            <label class="radio-inline">
+                <input type="radio" name="addable" id="optionsRadios12" value="10" checked> 所有人可添加
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="addable" id="optionsRadios13" value="20" > 好友可添加
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="addable" id="optionsRadios14"  value="30"> 自己可添加
+            </label>
+        </div>
+    </div>
+    <button type="button" id="saveText" style="margin-left: 50pt ;margin-right: 50pt" class="btn btn-success">保存</button>
+</div>
+</body>
+</html>

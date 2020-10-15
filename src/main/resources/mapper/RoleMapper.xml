@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.spingboottext.dao.RoleDao" >
+    <sql id="BASE_TABLE">
+        role
+    </sql>
+
+    <sql id="BASE_COLUMN">
+        id,name,age,gender,str,act,def,spd,hp,mp,createBy
+    </sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.example.spingboottext.model.Role">
+        INSERT INTO role (name,age,gender,str,act,def,spd,hp,mp,createBy) VALUES (#{name},#{age},#{gender},#{str},#{act},#{def},#{spd},#{hp},#{mp},#{createBy})
+    </insert>
+
+    <select id="selectRoles" resultType="com.example.spingboottext.model.Role">
+        SELECT
+        <include refid="BASE_COLUMN"/>
+        FROM
+        <include refid="BASE_TABLE"/>
+    </select>
+
+    <select id="byIdGetRole" resultType="com.example.spingboottext.model.Role">
+        SELECT * FROM role WHERE id = #{id}
+    </select>
+</mapper>

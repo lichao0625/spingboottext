@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.spingboottext.dao.AddressDao" >
+    <sql id="BASE_TABLE">
+        address
+    </sql>
+
+    <sql id="BASE_COLUMN">
+        id,name,des,eco,tec,rel,createBy
+    </sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.example.spingboottext.model.Address">
+        INSERT INTO <include refid="BASE_TABLE"/> (name,des,eco,tec,rel,createBy) VALUES (#{name},#{des},#{eco},#{tec},#{rel},#{createBy})
+    </insert>
+
+    <select id="selectAdresses" resultType="com.example.spingboottext.model.Address">
+        SELECT
+        <include refid="BASE_COLUMN"/>
+        FROM
+        <include refid="BASE_TABLE"/>
+    </select>
+
+    <select id="byIdGetAdress" resultType="com.example.spingboottext.model.Address">
+        SELECT * FROM  <include refid="BASE_TABLE"/> WHERE id = #{id}
+    </select>
+</mapper>
